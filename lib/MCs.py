@@ -54,7 +54,7 @@ class MC():
 
     def updateInhibitoryStates(self, localGCspikes, timestamp):    
         self.reboundInhibitions = [];              
-        for i in self.blockingInhibitions.keys():
+        for i in list(self.blockingInhibitions.keys()):
             self.blockingInhibitions[i] = self.blockingInhibitions[i] - 1;
             if(self.blockingInhibitions[i]<=0):
                 del self.blockingInhibitions[i];

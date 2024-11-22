@@ -38,7 +38,7 @@ def findPrediction(SImatrixGamma, nTotalTests, nGammaPerOdor=5):
     pValues = []; 
     pThreshold = 0.8;
     #pThreshold = 0.1; 
-    for i in range(0, nTotalTests):
+    for i in range(0, int(nTotalTests)):
         gammaID = (i+1)*nGammaPerOdor - 1; 
         lastGamma = SImatrixGamma[gammaID]; 
         maxSI = max(lastGamma);

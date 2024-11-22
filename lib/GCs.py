@@ -20,12 +20,12 @@ class GC():
         self.MC_delivery_time = {}
 
     def reset(self):
-        for i in self.MC_delivery_time.keys():
+        for i in list(self.MC_delivery_time.keys()):
             del self.MC_delivery_time[i];
             
     def differentiate(self): 
         self.plastic = 0;  
-        for i in self.GC.w.keys():
+        for i in list(self.GC.w.keys()):
             if self.GC.w[i] <= self.MC_GC_wInit: 
                 del self.GC.w[i];
         
@@ -48,7 +48,7 @@ class GC():
         
     def update_MC_spike_delivery(self, spiking_MCs):
         out = []
-        for i in self.MC_delivery_time.keys():
+        for i in list(self.MC_delivery_time.keys()):
             if self.MC_delivery_time[i] == 0:
                 out.append(i)
                 del self.MC_delivery_time[i]
