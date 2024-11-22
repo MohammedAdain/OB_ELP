@@ -112,8 +112,8 @@ class MC():
 class MClayer():
     def __init__(self, nMCs, nGCs, GCsPerNeurogenesis):
         self.MCs = [];
-        GCs_per_Neurogenesis_per_MC = GCsPerNeurogenesis/nMCs;
-        nNeurogenesis = nGCs/GCsPerNeurogenesis; 
+        GCs_per_Neurogenesis_per_MC = int(GCsPerNeurogenesis/nMCs);
+        nNeurogenesis = int(nGCs/GCsPerNeurogenesis); 
         for i in range(0, nMCs):
             self.MCs.append(MC(ID=i))
             for j in range(0, nNeurogenesis):
